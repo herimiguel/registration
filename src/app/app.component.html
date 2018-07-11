@@ -1,0 +1,207 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <img width="100" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
+</div>
+
+<h2>Register </h2>
+<form (submit) = 'onSubmit()' #formData='ngForm'>
+   
+    *First Name: <input 
+    type="text" 
+    name="firstName" 
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)] = 'user.firstName'
+    #firstName= "ngModel"
+    formData = "firstName"
+  />
+  <div *ngIf='firstName.errors'>
+  <div class="errors" *ngIf="!firstName.valid">Please enter a first Name</div>  
+  </div>
+  <br> 
+  
+  
+  *Last Name:  <input 
+    type="text" 
+    name="lastName" 
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)] = "user.lastName"
+    #lastName = "ngModel"
+  />
+  <div *ngIf='lastName.errors'>
+  <div class="errors" *ngIf="!lastName.valid">Please enter a Last Name</div>  
+  </div>
+  <br> 
+  
+  *Email: <input 
+  type="text" 
+  name="email" 
+  required 
+  minlength="4" 
+  maxlength="24"
+  [(ngModel)] = "user.email"
+  #email = "ngModel"
+/>
+<div *ngIf='email.errors'>
+<div class="errors" *ngIf="!email.valid">Please enter a valid Email</div>  
+</div>
+<br> 
+
+  *Password: <input 
+    type="password" 
+    name="password" 
+    required 
+    minlength="8" 
+    maxlength="24"
+    pattern="^([a-zA-Z0-9@*#]{8,15})$"
+    [(ngModel)] = "user.password"
+    #password ='ngModel'
+  />
+  <div *ngIf= 'password.errors'>
+  <div class="errors" *ngIf="!password.valid">Password is required</div>  
+</div>
+  <br> 
+  
+  *Password Confirmation: <input 
+  type="password" 
+  name="conPassword" 
+  required 
+  minlength="8" 
+  maxlength="24"
+  pattern="^([a-zA-Z0-9@*#]{8,15})$"
+  [(ngModel)] = "user.conPassword"
+  #conPassword = "ngModel"
+/>
+<div *ngIf='conPassword.errors'>
+<div class="errors" *ngIf="!conPassword.valid">Confirm your Password</div>  
+</div>
+<br> 
+
+  *Steet Address: <input 
+  type="text" 
+  name="streetAddress" 
+  required 
+  minlength="4" 
+  maxlength="24"
+  [(ngModel)] = "user.streetAddress"
+  #streetAddress = "ngModel"
+  />
+  <div *ngIf='streetAddress.errors'>
+  <div class="errors" *ngIf="!streetAddress.valid">Please your Address</div>  
+  </div>
+  <br> 
+  
+  Unit/Apt # <input 
+  type="text" 
+  name="unit" 
+  required 
+  minlength="3"
+  maxlength="5"
+  [(ngModel)] = "user.unit"
+  #unit = "ngModel"
+  />
+  <div *ngIf='unit.errors'>
+  <div class="errors" *ngIf="!unit.valid"> Unit/Apt# is required</div>  
+  </div>
+  <br> 
+  
+  *City: <input 
+  type="text" 
+  name="city" 
+  required 
+  minlength="7" 
+  maxlength="24"
+  [(ngModel)] = "user.city"
+  #city = "ngModel"
+  />
+  <div *ngIf='city.errors'>
+  <div class="errors" *ngIf="!city.valid">Enter a City</div>  
+  </div>
+  <br> 
+  
+  *State: 
+  <label for="state"></label>
+<select name="state">
+	<option value="AL">AL</option>
+	<option value="AK">AK</option>
+	<option value="AZ">AZ</option>
+	<option value="AR">AR</option>
+	<option value="CA">CA</option>
+	<option value="CO">CO</option>
+	<option value="CT">CT</option>
+	<option value="DE">DE</option>
+	<option value="DC">DC</option>
+	<option value="FL">FL</option>
+	<option value="GA">GA</option>
+	<option value="HI">HI</option>
+	<option value="ID">ID</option>
+	<option value="IL">IL</option>
+	<option value="IN">IN</option>
+	<option value="IA">IA</option>
+	<option value="KS">KS</option>
+	<option value="KY">KY</option>
+	<option value="LA">LA</option>
+	<option value="ME">ME</option>
+	<option value="MD">MD</option>
+	<option value="MA">MA</option>
+	<option value="MI">MI</option>
+	<option value="MN">MN</option>
+	<option value="MS">MS</option>
+	<option value="MO">MO</option>
+	<option value="MT">MT</option>
+	<option value="NE">NE</option>
+	<option value="NV">NV</option>
+	<option value="NH">NH</option>
+	<option value="NJ">NJ</option>
+	<option value="NM">NM</option>
+	<option value="NY">NY</option>
+	<option value="NC">NC</option>
+	<option value="ND">ND</option>
+	<option value="OH">OH</option>
+	<option value="OK">OK</option>
+	<option value="OR">OR</option>
+	<option value="PA">PA</option>
+	<option value="RI">RI</option>
+	<option value="SC">SC</option>
+	<option value="SD">SD</option>
+	<option value="TN">TN</option>
+	<option value="TX">TX</option>
+	<option value="UT">UT</option>
+	<option value="VT">VT</option>
+	<option value="VA">VA</option>
+	<option value="WA">WA</option>
+	<option value="WV">WV</option>
+	<option value="WI">WI</option>
+	<option value="WY">WY</option></select>
+  <br>
+  
+
+  *"I'm feeling lucky": 
+  <input 
+  type="text" 
+  name="feel" 
+  required 
+  minlength="2" 
+  maxlength="4"
+  [(ngModel)] = "user.feel"
+  #feel = "ngModel"
+  />
+  <div *ngIf='feel.errors'>
+  <div class="errors" *ngIf="!feel.valid">Enter YES or NO</div>  
+  </div>
+  <br>
+  <input type="submit" value="Register">
+
+</form>
+<div class='submit' *ngIf="success" > Thank you for registering with us, {{ user.firstName | json }} . We just sent you a Confirmation
+    email at {{ user.email }} , and we will send all mail to {{ user.streetAddress}} {{ user.unit }},
+    {{ user.city }}, {{ user.state }}.
+  Have a wonderful day!</div>
+
+
